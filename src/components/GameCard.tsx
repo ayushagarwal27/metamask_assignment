@@ -11,7 +11,7 @@ const GameCard: FC<GameCardProps> = ({ game }) => {
     <div
       key={game_name}
       className={
-        "flex flex-col gap-2 max-w-96 bg-black text-white rounded-lg p-4 hover:-translate-y-1 transition-all duration-300"
+        "flex flex-col gap-2 max-w-96 bg-black text-white rounded-xl p-4 hover:-translate-y-1 transition-all duration-300"
       }
     >
       <h3

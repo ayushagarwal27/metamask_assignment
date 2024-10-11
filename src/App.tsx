@@ -4,10 +4,12 @@ import GameContainer from "./components/GameContainer.tsx";
 import { WalletContext } from "./provider/WalletProvider.tsx";
 import Navbar from "./components/Navbar.tsx";
 import WalletConnect from "./components/WalletConnect.tsx";
+import { useSDK } from "@metamask/sdk-react";
 
 const App = () => {
   const { wallet } = useContext(WalletContext);
-
+  const { sdk, connected, connecting, provider, chainId } = useSDK();
+  console.log({ sdk, connected, connecting, provider, chainId });
   return (
     <>
       <Navbar />
