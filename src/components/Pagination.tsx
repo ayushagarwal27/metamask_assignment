@@ -33,7 +33,7 @@ const Pagination: FC<PaginationProps> = ({
     );
   });
   return (
-    <div className={"flex gap-3 justify-center mt-5"}>{renderPageNumbers}</div>
+    <div className={"flex gap-3 justify-center mt-1"}>{renderPageNumbers}</div>
   );
 };
 export default Pagination;
