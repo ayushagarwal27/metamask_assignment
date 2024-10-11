@@ -16,11 +16,7 @@ const App = () => {
       <div className={"min-h-svh flex justify-center bg-purple-300"}>
         {wallet ? (
           <div className={"flex flex-col mt-[60px] py-10 gap-4"}>
-            <h3
-              className={
-                "text-3xl text-center font-bold  text-purple-900 font-serif"
-              }
-            >
+            <h3 className={"text-3xl text-center font-bold  text-purple-900 "}>
               Web3 Games
             </h3>
             {/*<GameContainer games={gamesData} />*/}

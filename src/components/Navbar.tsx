@@ -16,7 +16,9 @@ const Navbar = () => {
           "max-w-[1100px] mx-auto flex flex-row items-center justify-between"
         }
       >
-        <span className={"text-purple-800 font-bold "}>ETH Games</span>
+        <span className={"text-purple-900 font-bold text-xl   p-1"}>
+          <span className={"bg-purple-50/60 p-1"}>Web3</span> Games
+        </span>
         {wallet && (
           <div className={"flex gap-4 items-center"}>
             <p
