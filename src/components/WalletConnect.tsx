@@ -1,17 +1,25 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { WalletContext } from "../provider/WalletProvider.tsx";
 import { useSDK } from "@metamask/sdk-react";
+import { toast } from "react-toastify";
 
 const WalletConnect = () => {
+  // @ts-ignore
   const { setWallet } = useContext(WalletContext);
-  const { sdk, connected, connecting, provider, chainId } = useSDK();
+  const { sdk, provider } = useSDK();
 
   const connect = async () => {
     try {
       const accounts = await sdk?.connect();
-      setWallet(accounts?.[0]);
-    } catch (err) {
-      console.warn("failed to connect..", err);
+      const balance = await provider?.request({
+        method: "eth_getBalance",
+        params: [accounts?.[0], "latest"],
+      });
+      setWallet({ address: accounts?.[0], balance });
+    } catch (err: { message: string }) {
+      toast.error(
+        err?.message || "Something went wrong, please try again later!",
+      );
     }
   };
 

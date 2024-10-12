@@ -1,6 +1,7 @@
-import { Game } from "../types/game.ts";
+import { Game } from "../../types/game.ts";
 import { FC, useState } from "react";
 import Pagination from "./Pagination.tsx";
+import SearchBar from "./SearchBar.tsx";
 
 interface GameTableProps {
   games: Game[];
@@ -13,6 +14,12 @@ const GameTable: FC<GameTableProps> = ({ games }) => {
   const gamesPerPage = 10;
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
+
+  const currentGames = filteredGames.slice(indexOfFirstGame, indexOfLastGame);
+
+  function handlePageChange(number: number) {
+    setCurrentPage(number);
+  }
 
   function handleSort(num: number) {
     const nextGames = games.sort((a, b) => {
@@ -38,40 +45,9 @@ const GameTable: FC<GameTableProps> = ({ games }) => {
     setFilteredGames([...nextGames]);
   }
 
-  const currentGames = filteredGames.slice(indexOfFirstGame, indexOfLastGame);
-
-  function handlePageChange(number: number) {
-    setCurrentPage(number);
-  }
   return (
     <>
-      <label htmlFor="table-search" className="sr-only">
-        Search
-      </label>
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
-          <svg
-            className="w-5 h-5 text-purple-500 dark:text-purple-400"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </div>
-        <input
-          type="text"
-          id="table-search"
-          onChange={(e) => handleSearch(e.target.value)}
-          className="block p-2 ps-10 text-sm text-purple-900 border border-purple-300 rounded-lg w-80 bg-purple-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-purple-700 dark:border-purple-600 dark:placeholder-purple-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search by Name or Description"
-        />
-      </div>
+      <SearchBar handleSearch={handleSearch} />
       <div className="relative max-w-[420px] md:max-w-[650px] lg:max-w-[1160px] xl:max-w-[1500px] overflow-x-auto sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-purple-500 dark:text-purple-400">
           <thead className="text-xs text-purple-700 uppercase bg-purple-50 dark:bg-purple-700 dark:text-purple-400">
@@ -116,19 +92,19 @@ const GameTable: FC<GameTableProps> = ({ games }) => {
                     className="px-6 py-4 font-medium text-purple-900 whitespace-nowrap dark:text-white"
                   >
                     {game.game_name}
-                  </td>{" "}
+                  </td>
                   <td
                     scope="row"
                     className="px-6 py-4 font-medium min-w-[450px] text-purple-900  dark:text-white"
                   >
                     {game.description}
-                  </td>{" "}
+                  </td>
                   <td
                     scope="row"
                     className="px-6 py-4 font-medium text-purple-900 whitespace-nowrap dark:text-white"
                   >
                     {game.ranking}
-                  </td>{" "}
+                  </td>
                   <td
                     scope="row"
                     className="px-6 py-4 font-medium text-purple-900 whitespace-nowrap dark:text-white"

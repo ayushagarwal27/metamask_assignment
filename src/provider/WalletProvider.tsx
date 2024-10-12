@@ -1,10 +1,12 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, FC, PropsWithChildren, useState } from "react";
 
 export const WalletContext = createContext("");
 import { MetaMaskProvider } from "@metamask/sdk-react";
 
-export const WalletProvider = ({ children }: { children: ReactNode }) => {
-  const [wallet, setWallet] = useState("");
+export const WalletProvider = ({ children }: PropsWithChildren) => {
+  const [wallet, setWallet] = useState<null | { address: ""; balance: number }>(
+    null,
+  );
   return (
     // @ts-ignore
     <WalletContext.Provider value={{ wallet, setWallet }}>

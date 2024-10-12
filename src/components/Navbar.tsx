@@ -3,6 +3,7 @@ import { WalletContext } from "../provider/WalletProvider.tsx";
 import { useSDK } from "@metamask/sdk-react";
 
 const Navbar = () => {
+  //@ts-ignore
   const { wallet, setWallet } = useContext(WalletContext);
   const { sdk } = useSDK();
   return (
@@ -24,7 +25,12 @@ const Navbar = () => {
             <p
               className={"bg-purple-200 text-purple-600 rounded-lg px-1 py-0.5"}
             >
-              {wallet.substring(0, 10)}...
+              {wallet.address.substring(0, 10)}...
+            </p>
+            <p
+              className={"bg-purple-200 text-purple-600 rounded-lg px-1 py-0.5"}
+            >
+              {Number(wallet.balance)} ETH
             </p>
             <button
               className={
