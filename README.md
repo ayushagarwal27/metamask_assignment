@@ -12,15 +12,15 @@
 ## Installation Instructions
 
 ```bash
-    git clone https://github.com/ayushagarwal27/metamask_assignment.git
+git clone https://github.com/ayushagarwal27/metamask_assignment.git
 ```
 
 ```bash
-    npm install
+npm install
 ```
 
 ```bash
-    npm run dev
+npm run dev
 ```
 
 

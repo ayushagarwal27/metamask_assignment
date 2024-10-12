@@ -9,17 +9,28 @@ const Navbar = () => {
   return (
     <nav
       className={
-        "h-[80px] bg-purple-800/30 backdrop-blur fixed top-0 z-[2] w-screen py-4"
+        "hidden md:block h-[80px] bg-black/80 backdrop-blur fixed  top-0 z-[2] w-screen py-4 md:px-10 xl:px-0"
       }
+      style={{
+        borderBottom: "5px solid",
+        borderImage: "linear-gradient(to right, purple, cyan) 1",
+      }}
     >
       <div
         className={
           "max-w-[1100px] mx-auto flex flex-row items-center justify-between"
         }
       >
-        <span className={"text-purple-900 font-bold text-xl   p-1"}>
-          <span className={"bg-purple-50/60 p-1"}>Web3</span> Games
-        </span>
+        <p className={"text-white font-bold text-xl"}>
+          <span
+            className={
+              "py-4 pl-1 text-center font-bold from-indigo-200 via-yellow-100 to-yellow-100 bg-gradient-to-r bg-clip-text text-transparent"
+            }
+          >
+            Web3
+          </span>{" "}
+          Games
+        </p>
         {wallet && (
           <div className={"flex gap-4 items-center"}>
             <p

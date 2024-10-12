@@ -6,6 +6,7 @@ import WalletConnect from "./components/WalletConnect.tsx";
 import GameTable from "./components/GameTable/GameTable.tsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MobileNavbar from "./components/MobileNavbar.tsx";
 
 const App = () => {
   //@ts-ignore
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+      <MobileNavbar />
       <div className={"min-h-svh flex justify-center bg-purple-300"}>
         {wallet ? (
           <div className={"flex flex-col mt-[60px] py-10 gap-4"}>

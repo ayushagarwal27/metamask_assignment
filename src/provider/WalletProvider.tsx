@@ -14,7 +14,7 @@ export const WalletProvider = ({ children }: PropsWithChildren) => {
         debug={false}
         sdkOptions={{
           dappMetadata: {
-            name: "Example React Dapp",
+            name: "Web3 Games",
             url: window.location.href,
           },
           infuraAPIKey: "https://eth.llamarpc.com",

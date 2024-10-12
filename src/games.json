@@ -58,6 +58,66 @@
       "description": "Enter the arena for epic battles where players summon mythical creatures and strategize for victory in a dynamic combat system.",
       "ranking": 4.7,
       "total_players": 19000
-    }
+    },
+   {
+     "game_name": "CryptoHeist",
+     "description": "Plan and execute daring heists in a virtual city while competing against other players for cryptocurrency rewards.",
+     "ranking": 4.6,
+     "total_players": 21000
+   },
+   {
+     "game_name": "Fantasy Forge",
+     "description": "Craft powerful items and build your own hero in a fantasy world filled with quests and challenges.",
+     "ranking": 4.4,
+     "total_players": 16000
+   },
+   {
+     "game_name": "Galactic Traders",
+     "description": "Trade and battle in a vast galaxy, where players can form alliances and build trade empires.",
+     "ranking": 4.5,
+     "total_players": 20000
+   },
+   {
+     "game_name": "Zombie Survival",
+     "description": "Survive in a post-apocalyptic world by gathering resources, crafting weapons, and battling other players and zombies.",
+     "ranking": 4.3,
+     "total_players": 15000
+   },
+   {
+     "game_name": "Space Pirates",
+     "description": "Sail through the cosmos as a pirate, capturing ships and engaging in epic space battles for valuable loot.",
+     "ranking": 4.8,
+     "total_players": 18000
+   },
+   {
+     "game_name": "Crypto Farm Wars",
+     "description": "Compete with other players in a farming simulation where strategy and resource management lead to victory.",
+     "ranking": 4.2,
+     "total_players": 13000
+   },
+   {
+     "game_name": "Dungeon Raiders",
+     "description": "Form a party and explore dungeons filled with monsters and treasures, with a play-to-earn twist.",
+     "ranking": 4.6,
+     "total_players": 19000
+   },
+   {
+     "game_name": "Rogue Realms",
+     "description": "A rogue-like adventure game where players explore randomly generated worlds filled with enemies and treasures.",
+     "ranking": 4.7,
+     "total_players": 14000
+   },
+   {
+     "game_name": "Crypto Racing League",
+     "description": "Join an exhilarating racing league where players can customize cars and earn cryptocurrency through competitions.",
+     "ranking": 4.9,
+     "total_players": 15000
+   },
+   {
+     "game_name": "Artisan's Quest",
+     "description": "Become a master craftsman in a vibrant world, creating unique items and trading them on the blockchain.",
+     "ranking": 4.4,
+     "total_players": 17000
+   }
   ]
 
